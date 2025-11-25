@@ -58,12 +58,12 @@ book (name="vgsweep_saturation",csv="dc_vg_pd_saturation_const.csv") {
 }
 
 solve (law="dclaw",initialstep=0.5,maxstep=0.5,minstep=1e-6,dozero,
-       matrixsolve="pardiso",threads=1,plot,plotprefix="dc",cgns) {
+       matrixsolver="pardiso",threads=1,plot,plotprefix="dc",cgns) {
   goal (thing="vd",quantity="voltage",value=0.7)
 }
 
 solve (law="dclaw",initialstep=0.02,maxstep=0.02,minstep=1e-6,dozero,book="vgsweep_saturation",
-       matrixsolve="pardiso",threads=1,plot,plotprefix="dc",cgns) {
+       matrixsolver="pardiso",threads=1,plot,plotprefix="dc",cgns) {
   goal (thing="vg",quantity="voltage",value=0.7)
 }
 
